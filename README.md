@@ -1,3 +1,6 @@
+![lintcover workflow](https://github.com/mrccnt/vstruct/actions/workflows/lintcover.yml/badge.svg)
+[![codecov](https://codecov.io/gh/mrccnt/vstruct/graph/badge.svg?token=INZR4MMMDZ)](https://codecov.io/gh/mrccnt/vstruct)
+
 # Vault Struct Parser
 
 Parser uses reflect and struct annotations to query a [Hashicorp Vault](https://www.vaultproject.io/) KV secrets engine
