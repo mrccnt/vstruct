@@ -8,15 +8,15 @@ import (
 )
 
 type MySecret struct {
-	Host string `secret:"$ENV/mariadb" name:"host"`
-	Port string `secret:"$ENV/mariadb" name:"port"`
-	IP   string `secret:"$ENV/mariadb" name:"ip"`
-	User string `secret:"$ENV/mariadb" name:"root_user"`
-	Pass string `secret:"$ENV/mariadb" name:"root_pass"`
+	Host string `name:"host"           secret:"$ENV/mariadb"`
+	Port string `name:"port"           secret:"$ENV/mariadb"`
+	IP   string `name:"ip"             secret:"$ENV/mariadb"`
+	User string `name:"root_user"      secret:"$ENV/mariadb"`
+	Pass string `name:"root_pass"      secret:"$ENV/mariadb"`
 	Foo  string `secret:"$ENV/mariadb"`
 }
 
-func setup(t testing.TB) (func(t testing.TB, server *httptest.Server), *httptest.Server) {
+func setup(_ testing.TB) (func(t testing.TB, server *httptest.Server), *httptest.Server) {
 	server := httptest.NewServer(http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
 		_, _ = writer.Write([]byte(`{
   "data": {

@@ -1,22 +1,9 @@
 issues:
-  exclude-use-default: false
   fix: true
 
-run:
-  skip-dirs:
-    - data
-    - static
-
 linters:
-  disable-all: true
   enable:
-    - errcheck
-    - gosimple
-    - govet
-    - ineffassign
-    - staticcheck
     - typecheck
-    - unused
     - depguard
     - errorlint
     - gocognit
@@ -28,18 +15,3 @@ linters:
     - stylecheck
     - usestdlibvars
     - gofmt
-
-linters-settings:
-
-  gosec:
-    excludes:
-      - G304
-
-  stylecheck:
-    checks: [ "all", "-ST1000" ]
-
-  revive:
-    rules:
-      - name: package-comments
-        disabled: true
-
